@@ -1,0 +1,54 @@
+
+
+<body class="hold-transition login-page bg-white">
+    <div class="login-box ">
+      <div class="login-logo ">
+        <a  class="text-secondary"><b>Contact </b>Add</a>
+      </div>
+      <div class="card ">
+        <div class="card-body login-card-body bg-white">
+          <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
+          <form [formGroup]="addContactForm" (ngSubmit)="addContact()">
+  
+            <div class="input-group mb-3">
+              <input type="text" formControlName="name" class="form-control bg-white" placeholder="Enter name">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="input-group mb-3">
+              <input type="text" formControlName="email" class="form-control bg-white" placeholder="email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="input-group mb-3">
+                <input type="text" formControlName="phone" class="form-control bg-white" placeholder="phone">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+  
+          
+  
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+              </div>
+            </div>
+          </form>
+  
+          
+        </div>
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <div class="content-wrapper bg-gradient-light text-dark">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="text-secondary">All Details</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content"></section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body bg-white">
+                <div
+                  style="overflow-x: auto; max-width: 100%"
+                  class="custom-scrollbar"
+                >
+                  <ng-container
+                    *ngIf="filterList && filterList.length > 0; else noData"
+                  >
+                    <table
+                      id="example2"
+                      class="table table-bordered table-hover bg-dark text-white"
+                    >
+                      <thead>
+                        <tr class="text-secondary text-white">
+                          <th>Sr.No</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-dark">
+                        <tr
+                          class="bg-white"
+                          id="Table_data"
+                          *ngFor="let item of filterList; let i = index"
+                        >
+                          <th class="text-dark">
+                            {{ i + 1 }}
+                          </th>
+                          <td>{{ item.name }}</td>
+
+                          <td id="Table_data">{{ item.email }}</td>
+                          <td id="Table_data">{{ item.phone }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ng-container>
+                  <div class="bg-white text-dark">
+                    <ng-template #noData class="bg-white">
+                      <p class="text-dark bg-white">Data not available.</p>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
