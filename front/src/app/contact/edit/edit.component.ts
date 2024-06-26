@@ -28,7 +28,6 @@ export class EditComponent {
     this.route.params.subscribe((params: Params) => {
       this.editdata = +this.route.snapshot.params['id'];
     });
-
     this.serviceContact.editContact(this.editdata).subscribe({
       next: (response: any) => {
         this.addContactForm.patchValue({

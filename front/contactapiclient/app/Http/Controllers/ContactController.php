@@ -8,7 +8,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return response()->json(Contact::all(), 201);
+        return response()->json(Contact::all(), 200);
     }
 
     public function show($id)
@@ -25,7 +25,7 @@ class ContactController extends Controller
         $contact->save();
 
 
-        return response()->json($contact, 201);
+        return response()->json($contact, 200);
     }
 
     public function update(Request $request)
@@ -44,6 +44,6 @@ class ContactController extends Controller
     {
         $id=$request->id;
         Contact::findOrFail($id)->delete();
-        return response()->json(null, 204);
+        return response()->json(null, 200);
     }
 }

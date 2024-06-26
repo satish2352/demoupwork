@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
     this.serviceContact.getAllContact().subscribe({
       next: (response: any) => {
         this.filterList = response
-        this.router.navigate(['/admin','list']);
+        // this.router.navigate(['/admin','list']);
       },
       error: (error: any) => {
         console.log(error.status);
@@ -38,6 +38,19 @@ export class ListComponent implements OnInit {
   }
 
   // daleteContact
+
+  editContact(id: number) {
+    this.router.navigate(['/admin', 'edit', id]);
+  }
+
+  daleteContact(id_data: number) {
+   
+    this.serviceContact.daleteContact({id:id_data}).subscribe(res => {
+        this.router.navigate(['/admin','list']);
+      
+    });
+
+  }
 
   
 }
