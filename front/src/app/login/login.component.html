@@ -1,0 +1,108 @@
+<div class="center-container bg-gradient-light">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html" class="text-secondary">
+        <img
+          src="../../assets/img/logo11.png"
+          alt="login logo"
+          width="40px"
+          style="padding-inline: 7px"
+        />
+        Login</a
+      >
+    </div>
+    <div class="card bg-white">
+      <div class="card-body login-card-body bg-white">
+        <!-- <p class="login-box-msg">Log in to start your session</p> -->
+
+        <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()">
+          <div class="input-group mb-3">
+            <input
+              formControlName="mobile"
+              id="mobile"
+              type="text"
+              class="form-control text-secondary bg-white"
+              placeholder="Enter Mobile Number"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-mobile"></span>
+              </div>
+            </div>
+          </div>
+          <!-- Mobile validation messages -->
+          <div
+            *ngIf="
+              adminLoginForm?.get('mobile')?.invalid &&
+              (adminLoginForm?.get('mobile')?.dirty ||
+                adminLoginForm?.get('mobile')?.touched)
+            "
+            class="text-danger"
+          >
+            <!-- <p *ngIf="adminLoginForm?.get('mobile')?.errors?.['required']">Mobile is required</p> -->
+            <p *ngIf="adminLoginForm?.get('mobile')?.errors?.['pattern']">
+              Invalid mobile number format
+            </p>
+          </div>
+
+          <div class="input-group mb-3">
+            <input
+              formControlName="password"
+              id="password"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              class="form-control text-secondary bg-white"
+              placeholder="Enter Password"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <!-- Toggle icon based on showPassword value -->
+                <span
+                  class="fas"
+                  [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+                  (click)="togglePasswordVisibility()"
+                ></span>
+              </div>
+            </div>
+          </div>
+          <!-- Password validation messages -->
+          <div
+            *ngIf="
+              adminLoginForm?.get('password')?.invalid &&
+              (adminLoginForm?.get('password')?.dirty ||
+                adminLoginForm?.get('password')?.touched)
+            "
+            class="text-danger"
+          >
+            <p *ngIf="adminLoginForm?.get('password')?.errors?.['required']">
+              Password is required
+            </p>
+          </div>
+          <div
+            *ngIf="adminLoginForm.invalid && formSubmitted"
+            class="text-danger"
+          >
+            Please enter your credentials to log in.
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <p class="mb-1">
+                  <a routerLink="#" (click)="navigateToPage()"
+                    >Forgot password</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block">
+                Log In
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

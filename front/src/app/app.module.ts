@@ -8,6 +8,7 @@ import { AddComponent } from './contact/add/add.component';
 import { ListComponent } from './contact/list/list.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { EditComponent } from './contact/edit/edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EditComponent } from './contact/edit/edit.component';
     AddComponent,
     ListComponent,
     AdmindashboardComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

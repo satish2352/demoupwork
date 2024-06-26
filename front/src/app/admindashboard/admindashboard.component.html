@@ -39,7 +39,7 @@
           </li>
 
           <span class="new3"></span>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a
               routerLink="change-password"
               routerLinkActive="active"
@@ -48,9 +48,14 @@
               <i class="nav-icon digital-icon fa-solid fa-key"></i>
               <p style="padding-left: 10px">Change Password</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link">
+            <a
+              class="nav-link"
+              (click)="logout()"
+              href="JavaScript:void(0)"
+              onclick="confirm('Are you sure want to logout')"
+            >
               <i class="nav-icon digital-icon p-1 fa fa-unlock-alt"></i>
               <p style="padding-left: 10px">Log out</p>
             </a>

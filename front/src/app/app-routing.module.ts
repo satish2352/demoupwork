@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './contact/add/add.component';
 import { EditComponent } from './contact/edit/edit.component';
+import { LoginComponent } from './login/login.component';
 
 // import { EditComponent } from './contact/add/edit.component';
 import { ListComponent } from './contact/list/list.component';
@@ -11,8 +12,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/add', pathMatch: 'full' },
-  { path: 'add', component: AddComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: LoginComponent },
 
   { path: 'admin', component: AdmindashboardComponent,
     children: [
